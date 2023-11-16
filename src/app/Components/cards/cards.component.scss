@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@500&display=swap');
+
+ * {
+    box-sizing: border-box;
+    font-family: 'Josefin Slab';
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    gap: 20px;
+}
+.card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    // align-items: center;
+}
+.image {
+    object-fit: cover;
+    width: 100%;
+    grid-column: 1/2;
+}
+.card-content {
+    display: grid;
+    grid-column: 2/4;
+    align-items: center;
+}
+
+.card-content p {
+    font-size: 15px;
+}
