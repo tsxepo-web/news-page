@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@500&display=swap');
+
+:root {
+    --radius: 5px
+    --padding: 10px
+}
+
+.container {
+    text-transform: uppercase;
+    font-family: "Josefin Slab", serif;
+    text-align: center;
+    display: grid;
+    // padding: 2px 200px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 0.2fr 1.5fr 1.2fr 0.4fr;
+    gap: 1rem;
+    height: 100vh;
+    grid-template-areas: 
+        "navbar navbar navbar "
+        "main main sidebar"
+        "content1 content2 sidebar"
+        "content3 content4 content5";
+}
+.navbar {
+    grid-area: navbar;
+    grid-column: 1/-1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+.nav-links a {
+    color: black;
+}
+.logo {
+    font-size: 32px;
+}
+
+.menu {
+    display: flex;
+    gap: 1em;
+    font-size: 13px;
+    font-weight: 700;
+}
+.menu li:hover {
+    background-color: #4c9e9e;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.menu li {
+    padding: 5px 14px;
+}
+.menu li a {
+    color: hsl(236, 13%, 42%);
+  }
+input[type=checkbox] {
+    display: none;
+}
+.hamburger {
+    display: none;
+    font-size: 24px;
+    user-select: none;
+}
+
+main {
+    grid-area: main;
+
+}
+
+main img {
+    width: 100%;
+    height: 100%;
+   }
+.sidebar {
+    background-color: hsl(240, 100%, 5%);
+    color: hsl(36, 100%, 99%);
+    grid-area: sidebar;
+}
+.sidebar h1 {
+    color: hsl(35, 77%, 62%);
+}
+.content1 {
+    grid-area: content1;
+}
+.content2 {
+    grid-area: content2;
+
+}
+
+.content3 {
+    grid-area: content3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-height: 50%;
+}
+
+.content4 {
+    grid-area: content4;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-height: 50%;
+}
+.content5 {
+    grid-area: content5;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-height: 50%;
+}
+
+.content-image img {
+    width: 100%;
+    height: 50%;
+}
+.card-content {
+    grid-column: 2/-1;
+}
+
+.card-content p {
+    font-size: 0.5rem;
+    color: black;
+    margin-top: 5px;
+}
+
+@media only screen and (max-width:1300px) {
+    .content3, .content4, .content5 {
+        max-height: 100%;
+        // padding: 0;
+    }
+    .content-image img {
+        width: 100%;
+        height: 100%;
+    }
+}
+@media only screen and (max-width:550px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.4fr 2.2fr 1.2fr 1.2fr 2.2fr 1.5fr 1.5fr 1.5fr;
+        gap: 0.5rem;
+        padding: 0;
+        grid-template-areas: 
+        "navbar"
+        "main"
+        "content1"
+        "content2"
+        "sidebar"
+        "content3"
+        "content4"
+        "content5"
+        ;
+    }
+    .content3, .content4, .content5 {
+        max-height: 100%;
+    }
+    .content-image img {
+        width: 100%;
+        height: 100%;
+    }
+    .menu {
+        display: none;
+        position: absolute;
+        background-color: rgb(119, 149, 149);
+        right: 0;
+        left: 0;
+        text-align: center;
+        padding: 16px 0;
+    }
+    .menu li:hover {
+        display: inline-block;
+        background-color: #6beaea;
+        transition: 0.3s ease;
+    }
+    .menu li + li {
+        margin-top: 12px;
+    }
+    input[type=checkbox]:checked ~ .menu {
+        display: block;
+    }
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+}
