@@ -1,20 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@500&display=swap');
-* {
-    box-sizing: border-box;
-    font-family: 'Josefin Slab';
-}
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@900&display=swap");
+
+$dark-bg: hsl(240, 100%, 5%);
+$white-text: hsl(36, 100%, 99%);
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 li {
-    list-style: none;
+  list-style: none;
+}
+
+body {
+  font-family: "Josefin Slab";
 }
